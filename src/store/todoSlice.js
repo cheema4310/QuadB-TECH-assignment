@@ -20,7 +20,16 @@ const todoSlice = createSlice({
       state.push({
         id: newTodo.id,
         task: newTodo.task,
+        completed: newTodo.completed,
       });
+
+      // saving todo in localStorage
+      window.localStorage.setItem('todos', JSON.stringify(state));
+    },
+    doneTodo(state, action) {
+      const todoId = action.payload;
+      const existingTodo = state.find((todo) => todo.id === todoId);
+      existingTodo.completed = !existingTodo.completed;
 
       // saving todo in localStorage
       window.localStorage.setItem('todos', JSON.stringify(state));
@@ -36,5 +45,5 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addTodo, removeTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, doneTodo } = todoSlice.actions;
 export default todoSlice.reducer;

@@ -11,6 +11,7 @@ const AddTodoForm = () => {
     const newTodo = {
       id: Math.floor(Math.random() * 1000),
       task: task,
+      completed: false,
     };
     dispatch(addTodo(newTodo));
     setTask('');
@@ -27,7 +28,7 @@ const AddTodoForm = () => {
           value={task}
           autoFocus
           onChange={(e) => setTask(e.target.value)}
-          className="leading-[3rem] w-full text-xl text-lighter font-medium font-modern outline-none px-2 rounded-lg bg-darker"
+          className="leading-[3rem] w-full text-xl text-lighter placeholder:text-light font-medium font-modern outline-none px-2 rounded-lg bg-darker"
         />
       </div>
 

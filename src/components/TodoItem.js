@@ -1,20 +1,42 @@
 import { useDispatch } from 'react-redux';
 import DeleteIcon from '../assets/icons/DeleteIcon';
-import { removeTodo } from '../store/todoSlice';
+import { doneTodo, removeTodo } from '../store/todoSlice';
 
-const TodoItem = ({ index, todo }) => {
+const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleDelClick = () => {
     dispatch(removeTodo(todo.id));
   };
 
+  const handleCompletedClick = () => {
+    dispatch(doneTodo(todo.id));
+  };
   return (
-    <div className="text-lighter bg-darker p-3 rounded-lg">
-      <div className="flex justify-between font-btn">
-        <div className="flex-1 text-xl font-medium">{todo.task}</div>
-        <div onClick={handleClick} className="cursor-pointer">
-          <DeleteIcon />
+    <div
+      className={`${
+        todo.completed ? 'bg-dark' : 'bg-darker'
+      } p-3 rounded-lg text-lighter`}
+    >
+      <div className="flex font-btn">
+        <div
+          className={`flex-1 text-xl font-medium ${
+            todo.completed && 'line-through text-darkest'
+          }`}
+        >
+          {todo.task}
+        </div>
+        <div className="flex justify-center items-center gap-3">
+          <div onClick={handleCompletedClick} className="cursor-pointer">
+            <div
+              className={`border-[3px] border-light w-5 h-5 rounded-md  ${
+                todo.completed ? 'bg-darkest' : 'bg-light'
+              }`}
+            ></div>
+          </div>
+          <div onClick={handleDelClick} className="cursor-pointer">
+            <DeleteIcon />
+          </div>
         </div>
       </div>
     </div>
