@@ -25,7 +25,7 @@ const DisplayTodos = () => {
 
   return (
     <div className="w-full pt-6 border-t-[1px] border-darker grid grid-rows-[1fr_auto] h-full">
-      <div className="w-3/4 mx-auto py-6 grid lg:grid-cols-2 gap-2 h-fit">
+      <div className="w-5/6 mx-auto py-6 grid lg:grid-cols-2 gap-2 h-fit">
         {currentTodos.map((todo, index) => (
           <TodoItem key={todo.id} todo={todo} />
         ))}

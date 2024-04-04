@@ -21,9 +21,9 @@ const AddTodoForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex justify-center items-center gap-2 py-10 w-full"
+      className="flex justify-center items-center gap-2 py-10 mx-auto w-5/6 lg:w-2/5"
     >
-      <div className="w-5/6 lg:w-2/5">
+      <div className="w-full">
         <input
           type="text"
           placeholder="add todo here..."
