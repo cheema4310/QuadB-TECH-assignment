@@ -1,4 +1,4 @@
-# Simple React App
+# Todo React App
 
 This repository contains a Todo application that demonstrates basic CRUD operations.
 
@@ -19,7 +19,11 @@ To run this project locally, follow these steps:
    git clone https://github.com/cheema4310/QuadB-TECH-assignment.git
    ```
 
-2. Install dependencies using npm:
+2. Navigate to the project directory:
+   ```bash
+   cd todo-list
+   ```
+3. Install dependencies using npm:
    ```bash
    npm install
    ```
