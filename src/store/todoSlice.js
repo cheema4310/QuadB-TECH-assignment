@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// get stored todos from localstorage to persist the state of todos
+// get stored todos from localstorage
 const loadState = () => {
   const todosInStorage = window.localStorage.getItem('todos');
   if (todosInStorage === null) {

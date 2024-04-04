@@ -10,6 +10,7 @@ const DisplayTodos = () => {
   // create a copy of todos and reverse it
   const reversedTodos = [...todos].reverse();
 
+  // pagination logic
   const indexOfLastTodo = currentPage * todosPerPage;
   const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
   const currentTodos = reversedTodos.slice(indexOfFirstTodo, indexOfLastTodo);
@@ -19,7 +20,7 @@ const DisplayTodos = () => {
   for (let i = 1; i <= pageCount; i++) {
     pageNumbers.push(i);
   }
-
+  // only show pagination numbers if todos exceed the limit
   const showPagination = reversedTodos.length > 7;
 
   return (

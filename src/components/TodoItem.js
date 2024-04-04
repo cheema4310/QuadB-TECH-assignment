@@ -8,7 +8,7 @@ const TodoItem = ({ todo }) => {
   const handleDelClick = () => {
     dispatch(removeTodo(todo.id));
   };
-
+  // todo mark as completed
   const handleCompletedClick = () => {
     dispatch(doneTodo(todo.id));
   };
@@ -34,7 +34,10 @@ const TodoItem = ({ todo }) => {
               }`}
             ></div>
           </div>
-          <div onClick={handleDelClick} className="cursor-pointer">
+          <div
+            onClick={handleDelClick}
+            className="cursor-pointer hover:scale-110 active:scale-90"
+          >
             <DeleteIcon />
           </div>
         </div>

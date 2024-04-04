@@ -6,6 +6,8 @@ import AddIcon from '../assets/icons/AddIcon';
 const AddTodoForm = () => {
   const [task, setTask] = useState('');
   const dispatch = useDispatch();
+
+  // add todo
   const handleSubmit = (e) => {
     e.preventDefault();
     const newTodo = {
