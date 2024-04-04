@@ -12,7 +12,7 @@ const TodoItem = ({ index, todo }) => {
   return (
     <div className="text-lighter bg-darker p-3 rounded-lg">
       <div className="flex justify-between font-btn">
-        <div className="flex-1 text-lg font-medium">{todo.task}</div>
+        <div className="flex-1 text-xl font-medium">{todo.task}</div>
         <div onClick={handleClick} className="cursor-pointer">
           <DeleteIcon />
         </div>
