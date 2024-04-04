@@ -1,5 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Google Fonts */
+/* font-family: "Nunito", sans-serif; */
+/* <weight>: Use a value from 200 to 1000 */
+
+/* font-family: "Exo", sans-serif; */
+/* <weight>: Use a value from 100 to 900 */
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@100..900&family=Nunito:wght@200..1000&display=swap');

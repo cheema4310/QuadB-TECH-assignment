@@ -27,10 +27,11 @@ const todoSlice = createSlice({
     },
     removeTodo(state, action) {
       const todoId = action.payload;
-      state = state.filter((todo) => todo.id !== todoId);
+      const updatedState = state.filter((todo) => todo.id !== todoId);
 
       // remove todo from localStorage
-      window.localStorage.setItem('todos', JSON.stringify(state));
+      window.localStorage.setItem('todos', JSON.stringify(updatedState));
+      return updatedState;
     },
   },
 });
